@@ -1,0 +1,12 @@
+.innerBlock{
+    width: 90%;
+    padding: 0.5rem;
+}
+.outerBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.margin_halfRem{
+    margin: 0.5rem;
+}

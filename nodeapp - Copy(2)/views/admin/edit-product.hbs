@@ -1,0 +1,29 @@
+<main>
+    <div class="form">
+        <form action="/admin/{{#if editing }}edit-product {{else}}add-product {{/if}}" method="POST">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" name="title" autocomplete="off" value="{{#if editing}} {{product.title}} {{/if}}" placeholder="Enter Title">
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image Url</label>
+            <input type="text" class="form-control" name="imageUrl" autocomplete="off" value="{{#if editing}} {{product.imageUrl}} {{/if}}" placeholder="Enter Image Url">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" step="0.01" class="form-control" name="price" autocomplete="off" value="{{#if editing}}{{product.price}}{{/if}}" placeholder="Enter Price">
+        </div>
+        <div class="form-group">
+            <label for="descrp">description</label><br>
+            <textarea name="descrp" class="form-control" rows="5" cols="50" placeholder="Enter description">{{#if editing}}{{product.descrp}}{{/if}}</textarea>
+        </div>
+        
+        {{#if editing}}
+        <input type="hidden" value="{{product.id}}" name="productId"/>
+        {{/if}}
+
+        <br>
+        <button type="submit" class="btn btn-primary">{{#if editing }} UPDATE  {{else}} ADD {{/if}}</button>
+    </form>
+    </div>
+</main>

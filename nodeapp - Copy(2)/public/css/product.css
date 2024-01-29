@@ -1,0 +1,20 @@
+.card{
+    margin:.5rem 0;
+}
+.btnGrp{
+    display: flex;
+}
+.btnGrp .btn{
+    margin: 7px;
+    font-size: 10px;
+}
+.card-img-top{
+    height: 200px;
+}
+.card-body{
+    height: 150px;
+    line-height: 7px;
+}
+.middle{
+    margin: auto;
+}
