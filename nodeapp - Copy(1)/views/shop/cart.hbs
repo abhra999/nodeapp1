@@ -1,0 +1,44 @@
+<main>
+  <h1>Cart</h1>
+  {{#if hasProducts}}
+  <div class="row">
+    <div class="col-md-8">
+      {{#each products}}
+      <div class="card margin_halfRem">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 outerBlock">
+              <img src="{{this.imageUrl}}" alt="Product Image" class="innerBlock">
+            </div>
+            <div class="col-md-4 outerBlock">
+              <div class="innerBlock">
+                <h5 class="card-title">{{this.title}}</h5>
+              <p class="card-text">{{this.desc}}</p>
+              </div>
+            </div>
+            <div class="col-md-4 outerBlock">
+              <div class="innerBlock">
+              <p class="card-text">{{this.price}}</p>
+              <p class="card-text">Qty : {{this.qty}}</p>
+              <form action="/cart-delete-item" method="POST">
+                <input type="hidden" value="{{this.id}}" name="productId" />
+                <button class="btn btn-sm btn-danger">Remove</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="col-md-4">
+      <div class="text-right margin_halfRem">
+        <h4>Total: {{totalPrice}}</h4>
+        <button class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+  </div>
+  {{else}}
+    <p>No Product Available !</p>
+  {{/if}}  
+</main>
