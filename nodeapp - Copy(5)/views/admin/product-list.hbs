@@ -1,0 +1,30 @@
+<main>
+        <h1>My Products</h1>
+        <p>List of all the products...</p>
+        <div class="container">
+            {{#if hasProducts}}
+                <div class="row">
+                    {{#each prods}}
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src={{this.imageUrl}} alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.title}}</h5>
+                                <p class="card-text">{{this.descrp}}</p>
+                                <p class="card-text">Price {{this.price}}</p>
+                               <div class="btnGrp">
+                                <a href="/admin/edit-product/{{this._id}}?edit=true">Edit</a>
+                                <form action="/admin/delete-product/{{this._id}}" method="POST">
+                                   <input type="submit" class="btn btn-danger" value="Delete" />
+                                </form>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{else}}
+                <p>No Product Available !</p>
+            {{/if}}
+          </div>
+    </main>

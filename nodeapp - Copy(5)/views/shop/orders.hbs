@@ -1,0 +1,33 @@
+<main>
+    <h1>Orders</h1>
+    {{#if hasOrders}}
+    <div class="row">
+        <div class="col-md-8">
+            {{#each orders}}
+            <div class="card margin_halfRem">
+                <p>Order : #{{this._id}}</p>
+                <div class="card-body">
+                    <div class="row">
+                        {{#each this.products}}
+                        <div class="card margin_halfRem">
+                            <div class="card-body">
+                                <div class="row">
+                                   
+                                    <p>
+                                         <img class="smallImage" src="{{this.product.imageUrl}}"/> &nbsp;
+                                        Title: {{this.product.title}} &nbsp;
+                                        Desciption: {{this.product.descrp}} &nbsp;
+                                        Price: {{this.product.price}} &nbsp;
+                                        Quantity: {{this.quantity}} </p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+
+
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            {{/if}}
+</main>
